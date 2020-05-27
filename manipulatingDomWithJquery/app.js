@@ -24,7 +24,7 @@ $(".box").mouseout(function(){
 });
 
 $("<p>" + someText + "</p>").click(function(){
-    $(this).css("color",colors[Math.floor(Math.random() * colors.length)]);
+    $(this).css("color",getRandomColor());
 }).appendTo("body");
 
 function addSpan(){
@@ -37,3 +37,12 @@ function addFriends(){
         $("<li>" + friends[i] + "</li>").appendTo("ul");
     }
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
