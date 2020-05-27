@@ -33,9 +33,9 @@ hover.style.height = "50px";
 hover.style.width = "50px";
 
 p.addEventListener("click", function () {
-    p.style.color = colors[Math.floor(Math.random() * colors.length)];
+    p.style.color = getRandomColor()
 });
-
+// colors[Math.floor(Math.random() * colors.length)];
 
 function mouseOver() {
 
@@ -61,3 +61,12 @@ function addFriend(){
         ul.appendChild(li);
     }
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
